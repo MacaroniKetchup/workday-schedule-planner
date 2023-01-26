@@ -36,3 +36,7 @@
     transition: all 0.3s ease-in-out;
   }
   
+  #banner {
+    background-color: rgb(81, 170, 108);
+    border: 5px rgb(3, 31, 11);
+  }

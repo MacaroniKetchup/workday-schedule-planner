@@ -4,11 +4,13 @@ This application is a workday scheduler/planner, where you can create a schedule
 
 ## Aknowledgments
 
-- []()
+- [How to call a Jquery Library Function](https://www.tutorialspoint.com/How-to-call-a-jQuery-library-function)
 
-- []()
+- [jQuery parent(), children() and siblings()](http://net-informations.com/jq/iq/parent.htm)
 
-- []()
+- [Add Class](https://api.jquery.com/addClass/)
+
+- [Remove Class](https://api.jquery.com/removeClass/)
 
 ## Author
 
