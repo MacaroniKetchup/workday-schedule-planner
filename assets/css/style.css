@@ -40,3 +40,10 @@
     background-color: rgb(81, 170, 108);
     border: 5px rgb(3, 31, 11);
   }
+
+  textarea {
+    background: transparent;
+    border: none;
+    padding: 10px;
+    resize: none;
+  }
