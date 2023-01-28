@@ -13,7 +13,7 @@ $(document).ready(function () {
   $('#weekDay').text(dayWeek);
 
   function hourTracker() {
-    //get current number of hours.
+    // get current number of hours.
     var currentHour = moment().hour(); // use of moment.js
 
     // loop over time blocks
@@ -21,7 +21,7 @@ $(document).ready(function () {
       var blockHour = parseInt($(this).attr("id").split("hour")[1]);
       console.log(blockHour, currentHour)
 
-      //check if we've moved past this time, click into css/html given classes of past, present, or future
+      // check if we've moved past this time, click into css/html given classes of past, present, or future
       if (blockHour < currentHour) {
         $(this).addClass("past");
         $(this).removeClass("future");
@@ -47,41 +47,120 @@ $(document).ready(function () {
 
 })
 
+//Storage
 
-var textInput = document.querySelector(".description");
-var hourBlock = document.querySelector(".hour");
-var saveBtn = document.querySelector(".saveBtn");
+var saveBtn = $(".saveBtn");
 
-var timeBlocks = localStorage.getItem(".description",".hour");
+saveBtn.on("click", function() {
 
-renderTimeBlocks();
+  console.log(this); //save button
 
-function renderTimeBlocks() {
-  var text = localStorage.getItem(".desctiption");
-  var hour = localStorage.getItem(".hour");
+  var time = $(this).siblings(".hour").text();
+  var plan = $(this).siblings(".description").val();
 
-  if (!textInput || !hourBlock) {
-    return;
-  }
+  localStorage.setItem(time, plan);
 
-//  descriptionTextArea.textContent = text;
+});
+
+function userPlanner() {
+
+  var key = '.hour';
+  var value = localStorage.getItem('.description');
+
+  var $textarea = $('<textarea>');
+  $textarea.html(`<p>Key: ${key}</p><p>Value: ${value}</p>`);
+  $('body').append($textarea);
 
 }
 
-saveBtn.addEventListener("click", function(event) {
-  event.displayText;
-
-  var text = document.querySelector(".description").value;
-
-  localStorage.setItem(".description", text);
-  localStorage.setItem(".hour", hour);
-  renderTimeBlocks();
-});
+userPlanner();
 
 
 
 
 
+
+
+
+
+
+
+
+
+// function usePlanner() {
+
+//   // Get the .description element
+// var $plan = $('.description');
+
+// // Get the value from localStorage
+// var savedValue = localStorage.getItem('.description');
+
+// // If there is a saved value, set it to the .description
+// if (savedValue) {
+//   $('.description').val(savedValue);
+// }
+
+// // Listen for input in the .description and update localStorage
+// $('.description').on('input', function() {
+//   localStorage.setItem('.description', $(this).val());
+// });
+// // ------------------------------------------------------------------------------------------
+
+//   $(".hour").each(function() {
+//     var currentHour = $(this).text();
+//     var currentPlan = localStorage.getItem(currentHour);
+
+//       console.log(this);
+//       console.log(currentHour);
+
+//     if (!currentHour || !currentPlan) {
+//         $(this).siblings(".description").val(currentPlan);
+
+//     }
+//   });
+// }
+
+
+
+
+
+
+
+// -------------------------------------------------------------------------------------------
+// var textInput = document.querySelector(".description");
+// var hourBlock = document.querySelector(".hour");
+// var saveBtn = document.querySelector(".saveBtn");
+
+// var timeBlocks = localStorage.getItem(".description",".hour");
+
+// renderTimeBlocks();
+
+// function renderTimeBlocks() {
+//   var text = localStorage.getItem(".desctiption");
+//   var hour = localStorage.getItem(".hour");
+
+//   if (!textInput || !hourBlock) {
+//     return;
+//   }
+
+// //  descriptionTextArea.textContent = text;
+
+// }
+
+// saveBtn.addEventListener("click", function(event) {
+//   event.displayText;
+
+//   var text = document.querySelector(".description").value;
+
+//   localStorage.setItem(".description", text);
+//   localStorage.setItem(".hour", hour);
+//   renderTimeBlocks();
+// });
+
+
+
+
+// -------------------------------------------------------------------------------------------
 // Reference code:
 // var emailInput = document.querySelector("#email");
 // var passwordInput = document.querySelector("#password");
@@ -129,7 +208,7 @@ saveBtn.addEventListener("click", function(event) {
 //   }
 // });
 
-
+// ---------------------------------------------------------------------------------------------
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -146,7 +225,7 @@ saveBtn.addEventListener("click", function(event) {
   //
 
   // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
+  // the values of the corresponding .description elements. HINT: How can the id
   // attribute of each time-block be used to do this?
 
 
