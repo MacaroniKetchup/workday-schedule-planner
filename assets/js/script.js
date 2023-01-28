@@ -3,7 +3,7 @@
 // in the html.
 $(document).ready(function () {
 
-  // Displays the current Date
+  // Displays the current Date and Time
   var today = dayjs();
   $('#currentDay').text(today.format('MMMM D, YYYY h:mm:ss a '));
 
@@ -39,7 +39,7 @@ $(document).ready(function () {
       }
     })
 
-    timeTracker();
+    hourTracker();
 
   }
 
@@ -48,48 +48,87 @@ $(document).ready(function () {
 })
 
 
-$(function () {
+var textInput = document.querySelector(".description");
+var hourBlock = document.querySelector(".hour");
+var saveBtn = document.querySelector(".saveBtn");
 
-  $(".saveBtn").on("click"), function () {
-    console.log(this);
+var timeBlocks = localStorage.getItem(".description",".hour");
 
-    var text = $(this).siblings(".description").text();
-    var time = $(this).siblings(".hour").val();
+renderTimeBlocks();
 
-    // Storage
-    localStorage.setItem(time, text);
+function renderTimeBlocks() {
+  var text = localStorage.getItem(".desctiption");
+  var hour = localStorage.getItem(".hour");
 
-  function useSchedule () {
-
-    $(".hour").each(function() {
-      var currentHour = $(this).text();
-      var currentPlan = localStorage.getItem(currentHour);
-
-      console.log(this);
-      console.log(currentHour);
-
-      if(currentPlan !==null) {
-        $(this).siblings(".text").val(currentPlan);
-      }
-
-      useSchedule();
-    })
+  if (!textInput || !hourBlock) {
+    return;
   }
 
+//  descriptionTextArea.textContent = text;
+
+}
+
+saveBtn.addEventListener("click", function(event) {
+  event.displayText;
+
+  var text = document.querySelector(".description").value;
+
+  localStorage.setItem(".description", text);
+  localStorage.setItem(".hour", hour);
+  renderTimeBlocks();
+});
 
 
-// $('#hour8 . description').val(localStorage.getItem('hour8'));
-// $('#hour9 . description').val(localStorage.getItem('hour9'));
-// $('#hour10 . description').val(localStorage.getItem('hour10'));
-// $('#hour11. description').val(localStorage.getItem('hour11'));
-// $('#hour12. description').val(localStorage.getItem('hour12'));
-// $('#hour13. description').val(localStorage.getItem('hour13'));
-// $('#hour14. description').val(localStorage.getItem('hour14'));
-// $('#hour15. description').val(localStorage.getItem('hour15'));
-// $('#hour16. description').val(localStorage.getItem('hour16'));
-// $('#hour17 . description').val(localStorage.getItem('hour17'));
 
-  }
+
+
+
+// var emailInput = document.querySelector("#email");
+// var passwordInput = document.querySelector("#password");
+// var signUpButton = document.querySelector("#sign-up");
+// var msgDiv = document.querySelector("#msg");
+// var userEmailSpan = document.querySelector("#user-email");
+// var userPasswordSpan = document.querySelector("#user-password");
+
+
+// renderLastRegistered();
+
+// function displayMessage(type, message) {
+//   msgDiv.textContent = message;
+//   msgDiv.setAttribute("class", type);
+// }
+
+// function renderLastRegistered() {
+//   var email = localStorage.getItem("email");
+//   var password = localStorage.getItem("password");
+
+//   if (!email || !password) {
+//     return;
+//   }
+
+//   userEmailSpan.textContent = email;
+//   userPasswordSpan.textContent = password;
+// }
+
+// signUpButton.addEventListener("click", function(event) {
+//   event.preventDefault();
+
+//   var email = document.querySelector("#email").value;
+//   var password = document.querySelector("#password").value;
+
+//   if (email === "") {
+//     displayMessage("error", "Email cannot be blank");
+//   } else if (password === "") {
+//     displayMessage("error", "Password cannot be blank");
+//   } else {
+//     displayMessage("success", "Registered successfully");
+
+//     localStorage.setItem("email", email);
+//     localStorage.setItem("password", password);
+//     renderLastRegistered();
+//   }
+// });
+
 
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -109,6 +148,5 @@ $(function () {
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-});
 
 
