@@ -82,7 +82,7 @@ saveBtn.addEventListener("click", function(event) {
 
 
 
-
+// Reference code:
 // var emailInput = document.querySelector("#email");
 // var passwordInput = document.querySelector("#password");
 // var signUpButton = document.querySelector("#sign-up");
