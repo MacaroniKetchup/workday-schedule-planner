@@ -55,25 +55,38 @@ saveBtn.on("click", function() {
 
   console.log(this); //save button
 
-  var time = $(this).siblings(".hour").text();
-  var plan = $(this).siblings(".description").val();
+  var value = $(this).siblings(".description").val();
+  var time = $(this).parent().attr("id");
 
-  localStorage.setItem(time, plan);
+  // save to localStorage
+  localStorage.setItem(time, value);
 
 });
 
-function userPlanner() {
+// function userPlanner() {
 
-  var key = '.hour';
-  var value = localStorage.getItem('.description');
+//   var key = '.hour';
+//   var value = localStorage.getItem('.description');
 
-  var $textarea = $('<textarea>');
-  $textarea.html(`<p>Key: ${key}</p><p>Value: ${value}</p>`);
-  $('body').append($textarea);
+//   var $textarea = $('<textarea>');
+//   $textarea.html(`<p>Key: ${key}</p><p>Value: ${value}</p>`);
+//   $('body').append($textarea);
 
-}
+// }
 
-userPlanner();
+// userPlanner();
+
+// Received help from ASKBCS assistant for getting of the item
+
+$('#hour-9 .description').val(localStorage.getItem('hour-9'));
+$('#hour-10 .description').val(localStorage.getItem('hour-10'));
+$('#hour-11 .description').val(localStorage.getItem('hour-11'));
+$('#hour-12 .description').val(localStorage.getItem('hour-12'));
+$('#hour-13 .description').val(localStorage.getItem('hour-13'));
+$('#hour-14 .description').val(localStorage.getItem('hour-14'));
+$('#hour-15 .description').val(localStorage.getItem('hour-15'));
+$('#hour-16 .description').val(localStorage.getItem('hour-16'));
+$('#hour-17 .description').val(localStorage.getItem('hour-17'));
 
 
 
@@ -86,7 +99,7 @@ userPlanner();
 
 
 
-
+// ---------------------------------------------------------------------------------------------
 // function usePlanner() {
 
 //   // Get the .description element
