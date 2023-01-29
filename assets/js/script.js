@@ -11,43 +11,33 @@ $(document).ready(function () {
   // Displays the current day of the week
   var dayWeek = today.format('[Today is] dddd');
   $('#weekDay').text(dayWeek);
-
-  function hourTracker() {
-    // get current number of hours.
-    var currentHour = moment().hour(); // use of moment.js
-
-    // loop over time blocks
-    $(".time-block").each(function () {
-      var blockHour = parseInt($(this).attr("id").split("hour")[1]);
-      console.log(blockHour, currentHour)
-
-      // check if we've moved past this time, click into css/html given classes of past, present, or future
-      if (blockHour < currentHour) {
-        $(this).addClass("past");
-        $(this).removeClass("future");
-        $(this).removeClass("present");
-      }
-      else if (blockHour === currentHour) {
-        $(this).removeClass("past");
-        $(this).addClass("present");
-        $(this).removeClass("future");
-      }
-      else {
-        $(this).removeClass("present");
-        $(this).removeClass("past");
-        $(this).addClass("future");
-      }
-    })
-
-    hourTracker();
-
-  }
-
-  
-
 })
 
-//Storage
+// Time-Block style changer based on time of day
+function hourTracker() {
+
+  var hour = dayjs().hour();
+
+  $(".time-block").each(function() {
+    var currentHour = parseInt($(this).attr("id"));
+
+     console.log(this);
+
+     // .addClass if the currentHour is greater than, equal to, or less than hour
+      if (currentHour > hour) {
+          $(this).addClass("future");
+      } else if (currentHour === hour) {
+          $(this).addClass("present");
+      } else {
+          $(this).addClass("past");
+      }
+  })
+  
+};
+// run hourTracker function
+hourTracker();
+
+// Storage
 
 var saveBtn = $(".saveBtn");
 
@@ -62,7 +52,7 @@ saveBtn.on("click", function() {
   localStorage.setItem(time, value);
 
 });
-
+// -------------------------------------------------------------------------------------
 // function userPlanner() {
 
 //   var key = '.hour';
@@ -77,7 +67,7 @@ saveBtn.on("click", function() {
 // userPlanner();
 
 // Received help from ASKBCS assistant for getting of the item
-
+// -------------------------------------------------------------------------------------
 $('#hour-9 .description').val(localStorage.getItem('hour-9'));
 $('#hour-10 .description').val(localStorage.getItem('hour-10'));
 $('#hour-11 .description').val(localStorage.getItem('hour-11'));
