@@ -1,6 +1,6 @@
 # Workday-Schedule-Planner
 
-This application is a workday scheduler/planner, where you can create a schedule on the on the current displayed date in the header, and can scehdule events withing the time blocks within standard business hours.
+This application is a workday scheduler/planner, where you can create a schedule on the current displayed date in the header, and can scehdule events withing the time blocks within standard business hours.
 
 ## Aknowledgments
 
@@ -18,13 +18,20 @@ This application is a workday scheduler/planner, where you can create a schedule
 
 ## Demo
 
-
+![Woday-Schedule-Planner](assets\image\plannerdemo.gif)
 
 ## Deployed Link
 
 - [Workday Schedule Planner]()
 
 ## Features
+
+- Allows you to save text in each time-block and retains text saved in time-block upon refreshing the screen.
+
+- Time-blocks change colors based on the current time. (Time blocks change color based on past, present and future-tense)
+    - Past Hour blocks are displayed in: Orange (Color Hex: #f1c35e)
+    - Current Hour Blocks are displayed in: Red (Color Hex: #f14b4b)
+    - Future Hour Blocks are displayed in: Green (Color-Hex: ##77dd77)
 
 ## Liscense
 

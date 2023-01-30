@@ -1,34 +1,37 @@
 .row {
-    border-top: 1px solid white;
+    border-top: 1px solid #2e2e2e;
   }
   
   .hour {
-    background-color: #ffffff;
+    background-color: #a7a7a7;
     color: #000000;
     border-top: 1px dashed #000000;
   }
   
   .past {
-    background-color: #686868;
-    color: white;
+    background-color: #f14b4b;
+    color: #2e2e2e;
+    border-radius: 15px;
   }
   
   .present {
-    background-color: #ff6961;
-    color: white;
+    background-color: #f1c35e;
+    color: #2e2e2e;
+    border-radius: 15px;
   }
   
   .future {
     background-color: #77dd77;
-    color: white;
+    color: #2e2e2e;
+    border-radius: 15px;
   }
   
   .saveBtn {
     border-left: 1px solid black;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: #06aed5;
-    color: white;
+    background-color: #2826a5;
+    color: rgb(180, 180, 180);
   }
   
   .saveBtn i:hover {
@@ -37,13 +40,32 @@
   }
   
   #banner {
-    background-color: rgb(81, 170, 108);
+    background-color: aqua;
     border: 5px rgb(3, 31, 11);
   }
+
+  .img0 {
+    border-radius: 15px;
+    display: flexbox;
+  }
+
+  .img1{
+    border-radius: 15px;
+    display: flexbox;
+  }
+
+.img2{
+  border-radius: 15px;
+  display: flexbox;
+}
 
   textarea {
     background: transparent;
     border: none;
     padding: 10px;
     resize: none;
+  }
+
+  body {
+    background-color: #2e2e2e;
   }
