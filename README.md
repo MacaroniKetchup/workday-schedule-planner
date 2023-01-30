@@ -18,7 +18,7 @@ This application is a workday scheduler/planner, where you can create a schedule
 
 ## Demo
 
-![Woday-Schedule-Planner](assets\image\plannerdemo.gif)
+![Woday-Schedule-Planner](./assets/image/plannerdemo.gif)
 
 ## Deployed Link
 
