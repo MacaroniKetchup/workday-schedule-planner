@@ -22,7 +22,7 @@ This application is a workday scheduler/planner, where you can create a schedule
 
 ## Deployed Link
 
-- [Workday Schedule Planner]()
+- [Workday Schedule Planner](https://macaroniketchup.github.io/workday-schedule-planner/)
 
 ## Features
 
