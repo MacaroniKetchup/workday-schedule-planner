@@ -29,8 +29,8 @@ This application is a workday scheduler/planner, where you can create a schedule
 - Allows you to save text in each time-block and retains text saved in time-block upon refreshing the screen.
 
 - Time-blocks change colors based on the current time. (Time blocks change color based on past, present and future-tense)
-    - Past Hour blocks are displayed in: Orange (Color Hex: #f1c35e)
-    - Current Hour Blocks are displayed in: Red (Color Hex: #f14b4b)
+    - Past Hour blocks are displayed in: Red (Color Hex: #f14b4b) 
+    - Current Hour Blocks are displayed in: Orange (Color Hex: #f1c35e)
     - Future Hour Blocks are displayed in: Green (Color-Hex: ##77dd77)
 
 ## Liscense
